@@ -1,0 +1,17 @@
+### @no-log
+POST http://{{rabbitmq}}/api/exchanges/%2F/user.expense/publish
+Authorization: Basic {{rabbitmq_username}} {{rabbitmq_password}}
+Content-Type: application/json
+
+{
+  "vhost": "/",
+  "name": "user.expense",
+  "properties": {},
+  "routing_key": "user.expense.registered.event",
+  "payload": "{\"userId\": 1,\"amount\":11.99,\"currency\":\"pln\",\"category\":\"food\"}",
+  "payload_encoding": "string",
+  "headers": {},
+  "props": {
+    "content_type": "application/json"
+  }
+}

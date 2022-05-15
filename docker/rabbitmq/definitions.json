@@ -68,7 +68,7 @@
       }
     },
     {
-      "name": "user.expense.entry.event.expenses_registry",
+      "name": "user.expense.registered.event.expenses_registry",
       "vhost": "/",
       "durable": true,
       "auto_delete": false,
@@ -123,9 +123,9 @@
     {
       "source": "user.expense",
       "vhost": "/",
-      "destination": "user.expense.entry.event.expenses_registry",
+      "destination": "user.expense.registered.event.expenses_registry",
       "destination_type": "queue",
-      "routing_key": "user.expense.entry.event",
+      "routing_key": "user.expense.registered.event",
       "arguments": {}
     },
     {
