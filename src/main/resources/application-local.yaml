@@ -1,12 +1,12 @@
 spring:
   rabbitmq:
-    host:
-    port:
+    host: localhost
+    port: 5672
     username: expenses_registry
-    password:
+    password: secret
   datasource:
-    url:
+    url: jdbc:mariadb://localhost:3306/expenses_registry
     username: expenses_registry
-    password:
+    password: secret
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
