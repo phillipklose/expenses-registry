@@ -1,13 +1,13 @@
 spring:
   config:
     activate:
-      on-profile: local
+      on-profile: docker
   rabbitmq:
-    host: localhost
+    host: host.docker.internal
     port: 5672
     username: expenses_registry
     password: secret
   datasource:
-    url: jdbc:mariadb://localhost:3306/expenses_registry
+    url: jdbc:mariadb://host.docker.internal:3306/expenses_registry
     username: expenses_registry
     password: secret

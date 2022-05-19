@@ -1,4 +1,7 @@
 spring:
+  config:
+    activate:
+      on-profile: default, docker, local
   rabbitmq:
     host:
     port:
