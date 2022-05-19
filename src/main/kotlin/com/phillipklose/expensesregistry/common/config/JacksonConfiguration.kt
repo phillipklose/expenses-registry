@@ -1,6 +1,8 @@
 package com.phillipklose.expensesregistry.common.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.PropertyNamingStrategies
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.KotlinFeature
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import org.springframework.context.annotation.Bean
@@ -12,6 +14,8 @@ class JacksonConfiguration {
     @Bean
     fun jacksonObjectMapper(): ObjectMapper = ObjectMapper().apply {
         registerModule(kotlinModule())
+        registerModule(JavaTimeModule())
+        propertyNamingStrategy = PropertyNamingStrategies.SNAKE_CASE
     }
 
     private fun kotlinModule() = KotlinModule.Builder()

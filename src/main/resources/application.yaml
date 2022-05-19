@@ -13,3 +13,22 @@ spring:
     password:
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
+
+management:
+  info:
+    java:
+      enabled: true
+    git:
+      enabled: true
+      mode: full
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+      base-path: /manage
+      path-mapping:
+        health: /status
