@@ -1,6 +1,6 @@
 package com.phillipklose.expensesregistry.expense.application
 
-import com.phillipklose.expensesregistry.expense.domain.Expense
+import com.phillipklose.expensesregistry.expense.domain.Expense.NewlyRegisteredExpense
 import com.phillipklose.expensesregistry.expense.domain.Expenses
 import com.phillipklose.expensesregistry.expense.domain.Price
 import org.springframework.stereotype.Component
@@ -13,8 +13,8 @@ class RegisteringExpense(private val expenses: Expenses) {
         // TODO() Check if new expense will exceed the limit for day/week/month etc. If so then send an event.
     }
 
-    private fun RegisteredExpenseCommand.asExpense(): Expense.NewlyRegisteredExpense = with(this) {
-        Expense.NewlyRegisteredExpense(
+    private fun RegisteredExpenseCommand.asExpense(): NewlyRegisteredExpense = with(this) {
+        NewlyRegisteredExpense(
             userId = userId,
             price = Price(amount, currency),
             occurredAt = registeredAt

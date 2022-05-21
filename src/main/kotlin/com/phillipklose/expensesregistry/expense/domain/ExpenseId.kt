@@ -1,3 +1,3 @@
 package com.phillipklose.expensesregistry.expense.domain
 
-data class ExpenseId(val expenseId: Long)
+data class ExpenseId(val id: Long)

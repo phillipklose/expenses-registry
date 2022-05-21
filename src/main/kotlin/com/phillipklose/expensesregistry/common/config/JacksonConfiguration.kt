@@ -7,6 +7,8 @@ import com.fasterxml.jackson.module.kotlin.KotlinFeature
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import java.text.SimpleDateFormat
+
 
 @Configuration
 class JacksonConfiguration {
@@ -15,6 +17,7 @@ class JacksonConfiguration {
     fun jacksonObjectMapper(): ObjectMapper = ObjectMapper().apply {
         registerModule(kotlinModule())
         registerModule(JavaTimeModule())
+        dateFormat = SimpleDateFormat("dd-MM-yyyy hh:mm:ss")
         propertyNamingStrategy = PropertyNamingStrategies.SNAKE_CASE
     }
 
