@@ -29,6 +29,14 @@ To run in the docker container execute the following command:
 ### IDE - IntelliJ IDEA
 Create a Spring Boot Run Configuration with Active Profiles set to `local`.
 
+## Health checks
+
+In order to monitor the status of the application, `spring boot actuator` mechanism is used.
+
+List of exposed endpoints:
+* status page - /manage/status
+* info page - /manage/info
+
 ## Docker
 
 ### Build an image
