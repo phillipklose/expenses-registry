@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository
 @Repository
 interface ExpenseCrudRepository : PagingAndSortingRepository<ExpenseDatabaseEntity, Long> {
     fun findAllByUserId(userId: Long, pageable: Pageable): List<ExpenseDatabaseEntity>
+    fun countAllByUserId(userId: Long): Long
 }
